@@ -1,1 +1,18 @@
+@font-face {
+    src: url("../../fonts/Roboto.ttf") format("truetype");
+    font-family: "Roboto";
+}
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
