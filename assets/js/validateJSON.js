@@ -1,14 +1,37 @@
-const JSONInput = document.getElementById("json-input");
+class JSONValidator {
+    constructor(inputElementId) {
+        this.JSONInput = document.getElementById(inputElementId);
+        this.JSONInput.addEventListener("change", (event) =>
+            this.validateJSON(event)
+        );
+    }
 
-function validateJSON() {
-    try {
-        JSON.parse(JSONInput.value);
-        alert("Valid JSON!");
-        JSONInput.style.borderColor = "green";
-    } catch (error) {
-        alert("Invalid JSON!");
-        JSONInput.style.borderColor = "red";
+    validateJSON(event) {
+        const jsonFile = this.readFile(event.target.files[0]);
+
+        if (!this.isValidJson(jsonFile)) {
+            alert("Invalid JSON file");
+            return;
+        }
+    }
+
+    readFile(file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            return event.target.result;
+        };
+
+        reader.readAsText(file);
+    }
+
+    isValidJson(file) {
+        try {
+            JSON.parse(file);
+            return true;
+        } catch (error) {
+            return false;
+        }
     }
 }
 
-JSONInput.addEventListener("change", validateJSON);
+const jsonValidator = new JSONValidator("json-input");
