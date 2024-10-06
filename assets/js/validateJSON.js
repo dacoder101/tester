@@ -6,31 +6,46 @@ class JSONValidator {
         );
     }
 
-    validateJSON(event) {
-        const jsonFile = this.readFile(event.target.files[0]);
+    async validateJSON(event) {
+        try {
+            const fileContent = await this.readFile(event.target.files[0]);
+            const jsonData = this.parseJSON(fileContent);
 
-        if (!this.isValidJson(jsonFile)) {
-            alert("Invalid JSON file");
-            return;
+            if (!jsonData || !this.testKeyValidity(jsonData)) {
+                console.error("Invalid JSON file");
+                return;
+            }
+
+            console.log("Valid JSON file:", jsonData);
+        } catch (error) {
+            console.error("Error validating JSON:", error);
         }
     }
 
     readFile(file) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            return event.target.result;
-        };
-
-        reader.readAsText(file);
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (event) => resolve(event.target.result);
+            reader.onerror = (error) => reject(error);
+            reader.readAsText(file);
+        });
     }
 
-    isValidJson(file) {
+    parseJSON(json) {
         try {
-            JSON.parse(file);
-            return true;
+            return JSON.parse(json);
         } catch (error) {
-            return false;
+            console.error("Error parsing JSON:", error);
+            return null;
         }
+    }
+
+    testKeyValidity(json) {
+        const keys = Object.keys(json);
+        console.log(keys);
+        const validKeys = ["title", "label", "blankText", "questions"];
+
+        return keys.every((key) => validKeys.includes(key));
     }
 }
 
