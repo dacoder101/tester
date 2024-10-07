@@ -48,5 +48,3 @@ class JSONValidator {
         return keys.every((key) => validKeys.includes(key));
     }
 }
-
-const jsonValidator = new JSONValidator("json-input");
