@@ -6,3 +6,7 @@ function displayDiv(divId) {
         div.style.display = "none";
     }
 }
+
+function getYear() {
+    return new Date().getFullYear();
+}
