@@ -3,9 +3,93 @@
     font-family: "Roboto";
 }
 
+:root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --header-footer-background: #1f1f1f;
+    --changelog-background: #2c2c2c;
+    --box-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
 html,
 body {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
+    height: 100%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 15% 1fr;
+    height: 100vh;
+}
+
+header {
+    background-color: var(--header-footer-background);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--box-shadow-color);
+    grid-column: 2 / 3;
+}
+
+footer {
+    background-color: var(--header-footer-background);
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 4px var(--box-shadow-color);
+    grid-column: 2 / 3;
+}
+
+#changelog {
+    background-color: var(--changelog-background);
+    padding: 1rem;
+    box-shadow: 2px 0 4px var(--box-shadow-color);
+    overflow-y: auto;
+    grid-row: 1 / 4;
+}
+
+#changelog .entry {
+    margin-bottom: 1rem;
+}
+
+#changelog .entry h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+#changelog .entry p {
+    margin: 0;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2 / 3;
+    padding: 1rem;
+}
+
+#test-container {
+    padding: 1rem;
+}
+
+input[type="file"],
+button {
+    background-color: var(--header-footer-background);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--header-footer-background);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }

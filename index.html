@@ -11,23 +11,38 @@
             <p>Created by Bobby Elmore</p>
         </header>
         <div id="changelog">
+            <div class="header">
+                <h1>Changelog</h1>
+            </div>
             <div class="entry">
                 <h1>10/7/24</h1>
                 <p>JSON validation extends to ready for testing.</p>
+                <br />
+                <p>Formatted the website in an organized layout.</p>
+            </div>
+            <div class="entry">
                 <h1>10/6/24</h1>
                 <p>Added JSON validation.</p>
+            </div>
+            <div class="entry">
                 <h1>10/1/24</h1>
                 <p>Added Preset JSON cards.</p>
+            </div>
+            <div class="entry">
                 <h1>9/30/24</h1>
                 <p>Created basic website functionality.</p>
             </div>
         </div>
-        <div id="start">
-            <input type="file" id="json-input" accept=".json" />
-            <button onclick="initiateTest()">Start Test</button>
+        <div id="main-content">
+            <div id="start">
+                <input type="file" id="json-input" accept=".json" />
+                <button onclick="initiateTest()">Start Test</button>
+            </div>
+            <div id="test-container"></div>
         </div>
-        <footer></footer>
-        <div id="test-container"></div>
+        <footer>
+            <p>&copy; 2024 Tester. All rights reserved.</p>
+        </footer>
         <script src="./assets/js/func.js"></script>
         <script src="./assets/js/test.js"></script>
         <script src="./assets/js/validateJSON.js"></script>
