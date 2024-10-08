@@ -1,16 +1,14 @@
 class JSONValidator {
     constructor(inputElementId) {
-        JSONInput = document.getElementById(inputElementId);
-        JSONInput.addEventListener(
-            "change",
-            (event) => (checkedJSON = this.validateJSON(event))
-        );
-
-        if (!checkedJSON) {
-            this.resetJSON(inputElementId);
-        } else {
-            this.testReady = true;
-        }
+        let JSONInput = document.getElementById(inputElementId);
+        JSONInput.addEventListener("change", async (event) => {
+            const jsonData = await this.validateJSON(event);
+            if (!jsonData) {
+                this.resetJSON(JSONInput);
+            } else {
+                this.testReady = true;
+            }
+        });
     }
 
     async validateJSON(event) {
