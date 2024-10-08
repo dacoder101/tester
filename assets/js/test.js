@@ -1,5 +1,20 @@
+class RunTest {
+    constructor(testJSON, testingElementId) {
+        this.test = new Test(testJSON);
+        this.testingElement = document.getElementById(testingElementId);
+    }
+}
+
 class Test {
-    constructor(testFile) {
-        this.testFile = testFile;
+    constructor(testJSON) {
+        this.testJSON = testJSON;
+    }
+
+    getQuestions() {
+        return this.testJSON.questions.map((question) => question.question);
+    }
+
+    getAnswers() {
+        return this.testJSON.questions.map((question) => question.answer);
     }
 }

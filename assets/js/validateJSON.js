@@ -1,25 +1,28 @@
 class JSONValidator {
     constructor(inputElementId) {
-        this.JSONInput = document.getElementById(inputElementId);
-        this.JSONInput.addEventListener("change", (event) =>
-            this.validateJSON(event)
+        JSONInput = document.getElementById(inputElementId);
+        JSONInput.addEventListener(
+            "change",
+            (event) => (checkedJSON = this.validateJSON(event))
         );
+
+        if (!checkedJSON) {
+            this.resetJSON(inputElementId);
+        } else {
+            this.testReady = true;
+        }
     }
 
     async validateJSON(event) {
-        try {
-            const fileContent = await this.readFile(event.target.files[0]);
-            const jsonData = this.parseJSON(fileContent);
+        const fileContent = await this.readFile(event.target.files[0]);
+        const jsonData = this.parseJSON(fileContent);
 
-            if (!jsonData || !this.testKeyValidity(jsonData)) {
-                console.error("Invalid JSON file");
-                return;
-            }
-
-            console.log("Valid JSON file:", jsonData);
-        } catch (error) {
-            console.error("Error validating JSON:", error);
+        if (!jsonData || !this.testKeyValidity(jsonData)) {
+            alert("Invalid JSON file.");
+            return;
         }
+
+        return jsonData;
     }
 
     readFile(file) {
@@ -46,5 +49,9 @@ class JSONValidator {
         const validKeys = ["title", "label", "blankText", "questions"];
 
         return keys.every((key) => validKeys.includes(key));
+    }
+
+    resetJSON(element) {
+        element.value = "";
     }
 }
