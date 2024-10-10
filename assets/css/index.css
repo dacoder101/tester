@@ -9,6 +9,8 @@
     --header-footer-background: #1f1f1f;
     --changelog-background: #2c2c2c;
     --box-shadow-color: rgba(0, 0, 0, 0.5);
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
 }
 
 html,
@@ -24,7 +26,7 @@ body {
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 15% 1fr;
+    grid-template-columns: 15% 85%;
     height: 100vh;
 }
 
@@ -39,6 +41,7 @@ header {
 footer {
     background-color: var(--header-footer-background);
     padding: 1rem;
+    text-align: center;
     box-shadow: 0 -2px 4px var(--box-shadow-color);
     grid-column: 2 / 3;
 }
@@ -53,6 +56,8 @@ footer {
     box-shadow: 2px 0 4px var(--box-shadow-color);
     overflow-y: auto;
     grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    height: 100%;
 }
 
 #changelog .entry {
@@ -87,6 +92,7 @@ button {
     padding: 0.5rem 1rem;
     margin: 0.5rem 0;
     cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 input[type="file"]::file-selector-button {
@@ -95,4 +101,11 @@ input[type="file"]::file-selector-button {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+input[type="file"]:hover,
+button:hover,
+input[type="file"]::file-selector-button:hover {
+    transform: scale(1.05);
 }
