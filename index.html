@@ -4,6 +4,10 @@
         <title>Tester</title>
         <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
         <link rel="stylesheet" href="./assets/css/index.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+        />
     </head>
     <body>
         <noscript>
@@ -11,6 +15,19 @@
             the best experience.
         </noscript>
         <div class="container">
+            <div id="div-buttons">
+                <button class="div-button" style="margin-right: auto">
+                    <i class="bi bi-gear"></i>
+                </button>
+                <div style="display: flex">
+                    <button class="div-button">
+                        <i class="bi bi-info-circle"></i>
+                    </button>
+                    <button class="div-button">
+                        <i class="bi bi-question-circle"></i>
+                    </button>
+                </div>
+            </div>
             <header id="header">
                 <h1>Tester</h1>
                 <p>Created by Bobby Elmore</p>
@@ -24,7 +41,9 @@
                         <label for="json-input">Choose File</label>
                         <span id="file-name">No file chosen</span>
                     </div>
-                    <button id="start-button">Start Test</button>
+                    <button class="main-button" id="start-button">
+                        Start Test
+                    </button>
                 </div>
             </div>
             <hr class="main-content-divider" />
