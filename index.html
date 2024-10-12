@@ -83,6 +83,37 @@
                 </button>
                 <h1>Info</h1>
                 <hr />
+                <h2>Thanks for using Tester!</h2>
+                <p>
+                    Tester is a simple tool for testing yourself via JSON
+                    configuration files. It was created by Bobby Elmore in 2024
+                    in about a month, using HTML, CSS, and JavaScript.
+                </p>
+                <h2>Why was tester created?</h2>
+                <p>
+                    8th grade year of BHMS comes with a lot of tests, one being
+                    the Consitutional Challenge. Instead of trying to write down
+                    almost 350 flashcards, I decided it was easier to create a
+                    website that tests digitally. This originally started as a
+                    Python script, but decided it would be more beneficial to
+                    create an online version.
+                </p>
+                <p>
+                    I created Tester as a way to help study for exams; it was a
+                    very easy replacement for flashcards, as AI tools could
+                    easily generate JSON files I could plug in to this tool.
+                </p>
+                <h2>Tester is open source!</h2>
+                <p>
+                    Tester is open source under the CC0 1.0 universal license.
+                    You can view the source code on GitHub
+                    <a href="https://github.com/dacoder101/tester/">here!</a>
+                </p>
+                <p>
+                    If you would like to contribute, please feel free to fork
+                    the repository and submit a pull request. All contributions
+                    are greatly appreciated.
+                </p>
             </div>
         </div>
         <div class="modal" id="help-modal" style="display: none">
@@ -92,6 +123,36 @@
                 </button>
                 <h1>Help</h1>
                 <hr />
+                <h2>How can I use Tester?</h2>
+                <p>
+                    Tester requires a preexisting JSON file to be imported. To
+                    make your own test, please see
+                    "Creating a JSON file" below.
+                    You can also use preset tests available on the main page!
+                </p>
+                <h2>How do I import a JSON file?</h2>
+                <p>
+                    To import a JSON file, click the "Choose File" button and
+                    select the JSON file you would like to import. Once you have
+                    selected the file, click the "Start Test" button to begin.
+                </p>
+                <h2>Creating a JSON file</h2>
+                <p>
+                    All JSON tests require the following keys. Please see the examples on my <a href="https://github.com/dacoder101/tester/">GitHub repository</a> for more information.
+                    <ul>
+                        <li>
+                            <code>title</code> - The title of the test. Should be of type <code>string</code>.
+                        </li>
+                        <li>
+                            <code>label</code> - The label of the test, primarily used when selecting multiple tests at once. Should be of type <code>string</code>.
+                        </li>
+                        <li>
+                            <code>blankText</code> - Replaces all instances of <code>{blank}</code> in the question object with this value. Should be of type <code>string</code>.
+                        <li>
+                            <code>questions</code> - An <code>object</code> containing the questions along with their answers.
+                        </li>
+                    </ul>
+                </p>
             </div>
         </div>
         <div class="modal" id="test-modal" style="display: none">
