@@ -180,3 +180,24 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+
+noscript {
+    display: block;
+    background-color: #ffcc00;
+    color: #000;
+    padding: 1rem;
+    margin: 1rem auto; /* Center the noscript element */
+    border: 1px solid #cc9900;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    max-width: 400px; /* Ensure it doesn't exceed the container width */
+    width: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    position: absolute; /* Position it absolutely */
+    top: 0; /* Align it to the top */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-50%); /* Center it horizontally */
+    z-index: 3; /* Ensure it appears above other elements */
+}
