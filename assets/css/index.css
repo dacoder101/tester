@@ -228,3 +228,15 @@ noscript {
     transform: translateX(-50%); /* Center it horizontally */
     z-index: 3; /* Ensure it appears above other elements */
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--overlay-color);
+}
