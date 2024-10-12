@@ -1,3 +1,5 @@
+// assets/js/index.js
+
 const validator = new JSONValidator("json-input");
 
 function initiateTest() {

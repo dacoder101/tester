@@ -64,28 +64,45 @@
                 </div>
             </footer>
         </div>
-        <div class="modal" id="settings-modal">
-            <button
-                class="close-button"
-                onclick="displayDiv('settings-modal')"
-            ></button>
-            <h1>Settings</h1>
+        <div class="modal" id="settings-modal" style="display: none">
+            <div class="modal-content">
+                <button
+                    class="close-button"
+                    onclick="displayDiv('settings-modal')"
+                >
+                    &times;
+                </button>
+                <h1>Settings</h1>
+                <hr />
+            </div>
         </div>
-        <div class="modal" id="info-modal">
-            <button
-                class="close-button"
-                onclick="displayDiv('info-modal')"
-            ></button>
-            <h1>Info</h1>
+        <div class="modal" id="info-modal" style="display: none">
+            <div class="modal-content">
+                <button class="close-button" onclick="displayDiv('info-modal')">
+                    &times;
+                </button>
+                <h1>Info</h1>
+                <hr />
+            </div>
         </div>
-        <div class="modal" id="help-modal">
-            <button
-                class="close-button"
-                onclick="displayDiv('settings-modal')"
-            ></button>
-            <h1>Help</h1>
+        <div class="modal" id="help-modal" style="display: none">
+            <div class="modal-content">
+                <button class="close-button" onclick="displayDiv('help-modal')">
+                    &times;
+                </button>
+                <h1>Help</h1>
+                <hr />
+            </div>
         </div>
-        <div class="modal" id="test-modal"></div>
+        <div class="modal" id="test-modal" style="display: none">
+            <div class="modal-content">
+                <button class="close-button" onclick="displayDiv('test-modal')">
+                    &times;
+                </button>
+                <h1>Test</h1>
+                <hr />
+            </div>
+        </div>
 
         <script src="./assets/js/func.js"></script>
         <script src="./assets/js/test.js"></script>
