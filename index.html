@@ -16,14 +16,24 @@
         </noscript>
         <div class="container">
             <div id="div-buttons">
-                <button class="div-button" style="margin-right: auto">
+                <button
+                    class="div-button"
+                    style="margin-right: auto"
+                    onclick="displayDiv('settings-modal')"
+                >
                     <i class="bi bi-gear"></i>
                 </button>
                 <div style="display: flex">
-                    <button class="div-button">
+                    <button
+                        class="div-button"
+                        onclick="displayDiv('info-modal')"
+                    >
                         <i class="bi bi-info-circle"></i>
                     </button>
-                    <button class="div-button">
+                    <button
+                        class="div-button"
+                        onclick="displayDiv('help-modal')"
+                    >
                         <i class="bi bi-question-circle"></i>
                     </button>
                 </div>
@@ -54,9 +64,27 @@
                 </div>
             </footer>
         </div>
-        <div class="modal" id="settings-modal"></div>
-        <div class="modal" id="info-modal"></div>
-        <div class="modal" id="help-modal"></div>
+        <div class="modal" id="settings-modal">
+            <button
+                class="close-button"
+                onclick="displayDiv('settings-modal')"
+            ></button>
+            <h1>Settings</h1>
+        </div>
+        <div class="modal" id="info-modal">
+            <button
+                class="close-button"
+                onclick="displayDiv('info-modal')"
+            ></button>
+            <h1>Info</h1>
+        </div>
+        <div class="modal" id="help-modal">
+            <button
+                class="close-button"
+                onclick="displayDiv('settings-modal')"
+            ></button>
+            <h1>Help</h1>
+        </div>
         <div class="modal" id="test-modal"></div>
 
         <script src="./assets/js/func.js"></script>
