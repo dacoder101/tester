@@ -1,7 +1,4 @@
-@font-face {
-    src: url("../fonts/Roboto.ttf") format("truetype");
-    font-family: "Roboto";
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
     --background-color: #ffffff;
@@ -40,6 +37,9 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -60,6 +60,100 @@ body > * {
     z-index: 2;
 }
 
-.hidden-div {
+.container {
+    background-color: var(--header-footer-background);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--box-shadow-color);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--secondary-color);
+}
+
+.custom-file-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+.custom-file-input input[type="file"] {
     display: none;
+}
+
+.custom-file-input label {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--secondary-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease,
+        border-color 0.3s ease;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.custom-file-input label:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.custom-file-input span {
+    color: var(--text-color);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px; /* Adjust as needed */
+}
+
+input[type="file"],
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 100%;
+    border-radius: 4px;
+}
+
+input[type="file"]::file-selector-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+input[type="file"]:hover,
+button:hover,
+input[type="file"]::file-selector-button:hover {
+    transform: scale(1.05);
+    background-color: var(--secondary-color);
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: var(--secondary-color);
 }

@@ -6,48 +6,58 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <div id="main-page-content">
-            <div id="nav-buttons"></div>
-            <div id="title-section">
+        <div class="container">
+            <header>
                 <h1>Tester</h1>
-                <p>A quiz tool created by Bobby Elmore.</p>
+                <p>Created by Bobby Elmore</p>
+            </header>
+            <div id="main-content">
+                <div id="start">
+                    <h1>Select Test</h1>
+                    <div class="custom-file-input">
+                        <input type="file" id="json-input" accept=".json" />
+                        <label for="json-input">Choose File</label>
+                        <span id="file-name">No file chosen</span>
+                    </div>
+                    <button id="start-button">Start Test</button>
+                </div>
+                <div id="presets">
+                    <h1>Preset Tests</h1>
+                    <button
+                        class="preset"
+                        onclick="loadPreset('preconstitution-cards.json')"
+                    >
+                        Preconstitutional Cards
+                    </button>
+                    <button
+                        class="preset"
+                        onclick="loadPreset('article-one-cards.json')"
+                    >
+                        Article One Cards
+                    </button>
+                </div>
             </div>
-            <hr />
-            <div id="start-buttons">
-                <h1>Select Test</h1>
-                <input type="file" id="json-input" accept=".json" />
-                <button id="start-button">Start Test</button>
-            </div>
-            <hr />
-            <div id="copyright-notice">
-                <p id="copyright"></p>
-                <p>Open source under the CC0 1.0 universal license.</p>
-            </div>
+            <footer>
+                <div id="copyright-notice">
+                    <p>&copy; 2024 Bobby Elmore</p>
+                    <p>Open source under the CC0 1.0 universal license.</p>
+                </div>
+            </footer>
         </div>
-        <div id="changelog" class="hidden-div">
-            <div class="header">
-                <h1>Changelog</h1>
-            </div>
-            <div class="entry">
-                <h1>10/7/24</h1>
-                <p>JSON validation extends to ready for testing.</p>
-                <br />
-                <p>Formatted the website in an organized layout.</p>
-            </div>
-            <div class="entry">
-                <h1>10/6/24</h1>
-                <p>Added JSON validation.</p>
-            </div>
-            <div class="entry">
-                <h1>10/1/24</h1>
-                <p>Added Preset JSON cards.</p>
-            </div>
-        </div>
-        <div id="test-container" class="hidden-div"></div>
 
         <script src="./assets/js/func.js"></script>
         <script src="./assets/js/test.js"></script>
         <script src="./assets/js/validateJSON.js"></script>
         <script src="./assets/js/index.js"></script>
+        <script>
+            document
+                .getElementById("json-input")
+                .addEventListener("change", function () {
+                    const fileName = this.files[0]
+                        ? this.files[0].name
+                        : "No file chosen";
+                    document.getElementById("file-name").textContent = fileName;
+                });
+        </script>
     </body>
 </html>
