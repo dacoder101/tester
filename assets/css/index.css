@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 :root {
-    --background-color: #f9f9f9; /* Softer background color */
+    --background-color: #f9f9f9;
     --text-color: #222222;
     --header-footer-background: #ffffff;
     --changelog-background: #e0e0e0;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
-    --primary-color: #666666; /* Darker primary color */
-    --secondary-color: #999999; /* Darker secondary color */
+    --primary-color: #666666;
+    --secondary-color: #999999;
     --overlay-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -62,13 +62,13 @@ body > * {
 
 .container {
     background-color: var(--header-footer-background);
-    padding: 1.5rem; /* Reduced padding */
+    padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--box-shadow-color);
     text-align: center;
     max-width: 400px;
     width: 100%;
-    height: auto; /* Adjusted height */
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -78,13 +78,13 @@ body > * {
 
 #div-buttons {
     position: absolute;
-    top: 1rem; /* Adjust as needed */
+    top: 1rem;
     left: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem; /* Add padding to keep buttons away from edges */
+    padding: 0 1rem;
 }
 
 .div-button {
@@ -104,13 +104,13 @@ body > * {
 }
 
 header {
-    margin-bottom: 1rem; /* Reduced margin */
+    margin-bottom: 1rem;
 }
 
 h1 {
     margin: 0;
-    font-size: 1.5rem; /* Reduced font size */
-    padding: 0.5rem 0; /* Reduced padding */
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
 }
 
 header p {
@@ -213,20 +213,20 @@ noscript {
     background-color: #ffcc00;
     color: #000;
     padding: 1rem;
-    margin: 1rem auto; /* Center the noscript element */
+    margin: 1rem auto;
     border: 1px solid #cc9900;
     border-radius: 4px;
     text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    max-width: 400px; /* Ensure it doesn't exceed the container width */
+    max-width: 400px;
     width: 100%;
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-    position: absolute; /* Position it absolutely */
-    top: 0; /* Align it to the top */
-    left: 50%; /* Center it horizontally */
-    transform: translateX(-50%); /* Center it horizontally */
-    z-index: 3; /* Ensure it appears above other elements */
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
 }
 
 .modal {
@@ -249,9 +249,9 @@ noscript {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--box-shadow-color);
-    max-width: 90%; /* Slightly bigger than the main content */
+    max-width: 90%;
     width: auto;
-    margin: 1rem; /* Add margin for better spacing */
+    margin: 1rem;
     text-align: center;
     color: var(--text-color);
     position: relative;
@@ -277,5 +277,5 @@ noscript {
 .modal h1 {
     margin-top: 0;
     font-size: 1.5rem;
-    color:var(--text-color); /* Brighter color for better visibility */
+    color: var(--text-color);
 }
