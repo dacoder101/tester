@@ -49,15 +49,5 @@
         <script src="./assets/js/test.js"></script>
         <script src="./assets/js/validateJSON.js"></script>
         <script src="./assets/js/index.js"></script>
-        <script>
-            document
-                .getElementById("json-input")
-                .addEventListener("change", function () {
-                    const fileName = this.files[0]
-                        ? this.files[0].name
-                        : "No file chosen";
-                    document.getElementById("file-name").textContent = fileName;
-                });
-        </script>
     </body>
 </html>
