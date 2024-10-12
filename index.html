@@ -6,11 +6,25 @@
         <link rel="stylesheet" href="./assets/css/index.css" />
     </head>
     <body>
-        <header>
-            <h1>Tester</h1>
-            <p>Created by Bobby Elmore</p>
-        </header>
-        <div id="changelog">
+        <div id="main-page-content">
+            <div id="nav-buttons"></div>
+            <div id="title-section">
+                <h1>Tester</h1>
+                <p>A quiz tool created by Bobby Elmore.</p>
+            </div>
+            <hr />
+            <div id="start-buttons">
+                <h1>Select Test</h1>
+                <input type="file" id="json-input" accept=".json" />
+                <button id="start-button">Start Test</button>
+            </div>
+            <hr />
+            <div id="copyright-notice">
+                <p id="copyright"></p>
+                <p>Open source under the CC0 1.0 universal license.</p>
+            </div>
+        </div>
+        <div id="changelog" class="hidden-div">
             <div class="header">
                 <h1>Changelog</h1>
             </div>
@@ -29,35 +43,7 @@
                 <p>Added Preset JSON cards.</p>
             </div>
         </div>
-        <div id="main-content">
-            <div id="start">
-                <h1>Select Test</h1>
-                <input type="file" id="json-input" accept=".json" />
-                <button id="start-button">Start Test</button>
-            </div>
-            <div id="presets">
-                <h1>Preset Tests</h1>
-                <button
-                    class="preset"
-                    onclick="loadPreset('preconstitution-cards.json')"
-                >
-                    Preconstitutional Cards
-                </button>
-                <button
-                    class="preset"
-                    onclick="loadPreset('article-one-cards.json')"
-                >
-                    Article One Cards
-                </button>
-            </div>
-        </div>
-        <div id="test-container"></div>
-        <footer>
-            <div id="copyright-notice">
-                <p id="copyright"></p>
-                <p>Open source under the CC0 1.0 universal license.</p>
-            </div>
-        </footer>
+        <div id="test-container" class="hidden-div"></div>
 
         <script src="./assets/js/func.js"></script>
         <script src="./assets/js/test.js"></script>
