@@ -8,7 +8,7 @@ Tester is a simple static web tool for testing yourself. It uses importable JSON
 
 ## How can I use it?
 
-You can access Tester at https://dacoder101.github.io/tester/. Import a valid configuration file, and start testing! If you need help creating a configuration file, fill out the following,
+You can access Tester at [https://dacoder101.github.io/tester/](dacoder101.github.io/tester). Import a valid configuration file, and start testing! If you need help creating a configuration file, fill out the following,
 
 ```json
 {
@@ -46,6 +46,6 @@ If you would like more background info on the creation of Tester, please take a 
 -   This site shares a lot of similarites to one of my past projects, [Galactic Tourism Project.](https://github.com/dacoder101/galactic-tourism-project) Both were primarily created at school using school Chromebooks. Don't underestimate the power of GitHub codespaces.
 -   This project was created over the span of a month, totalling about 30-40 hours of _redundant_ work.
 -   This project was originally created in Python on three different occasions, all using JSON and a CLI. This website was simply an alternative to that hell, and was requested by some of my peers.
--   The main motive of this project was to have a chance at beating the "tryhards" of other 8th grade humanities classes. It would allow me to quickly study the flashcards provided in class.
+-   The main motive of this project was to have a chance at beating the "tryhards" of other 8th grade humanities classes on our Constitutional Challenge. It would allow me to quickly study the flashcards provided in class.
 
 I hope Tester is beneficial to you, and you enjoy using it as much fun as I had creating it!
