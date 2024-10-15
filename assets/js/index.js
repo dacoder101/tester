@@ -1,11 +1,14 @@
 const validator = new JSONValidator("json-input", "file-name");
+let testInstance;
 
 function initiateTest() {
     if (validator.testReady) {
-        let testInstance = new RunTest(validator.jsonData);
-        console.log(testInstance.test.getAnswers());
-        console.log(testInstance.test.getQuestions());
+        testInstance = new RunTest(validator.jsonData);
     }
+}
+
+function iterate() {
+    testInstance.nextQuestion();
 }
 
 document.getElementById(

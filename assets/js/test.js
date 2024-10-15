@@ -1,25 +1,30 @@
 class RunTest {
     constructor(testJSON) {
         this.test = new Test(testJSON);
-        this.startTest();
+        this.nextQuestion();
+        displayDiv("test-modal");
     }
 
-    startTest() {
-        let testing = false;
-
-        displayDiv("test-modal");
-
-        this.renderDiv();
-
-        while (testing) {}
+    nextQuestion() {
+        if (this.test.currentQuestion < this.test.getQuestions().length) {
+            this.test.iterateQuestion();
+            this.renderDiv();
+        } else {
+            alert("Test complete!");
+        }
     }
 
     renderDiv() {
         document.getElementById("test-content").innerHTML = `<h1>Question: ${
-            this.test.currentQuestion + 1
+            this.test.currentQuestion
         }/${this.test.getQuestions().length}</h1><h2>${this.test.label}-${
             this.test.questionLabelNumber
         }: ${this.test.blankTextReplace(this.test.currentQuestionText)}</h2>`;
+        // this.renderAnswers();
+    }
+
+    renderAnswers() {
+        // Render the answers
     }
 }
 
@@ -27,7 +32,6 @@ class Test {
     constructor(testJSON) {
         this.testJSON = testJSON;
         this.setupTest();
-        this.iterateQuestion();
     }
 
     setupTest() {
@@ -49,16 +53,14 @@ class Test {
     }
 
     iterateQuestion() {
-        if (this.currentQuestion !== 0) {
-            currentQuestion++;
-        }
-
         this.currentQuestionText = this.questions[this.currentQuestion];
         this.questionLabelNumber = this.getQuestionLabelNumber(
             this.currentQuestionText
         );
 
         //this.currentAnswers = self.generateAnswers();
+
+        this.currentQuestion++;
     }
 
     answerForQuestion(question) {
