@@ -12,4 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("json-input").value = ""; // Solves a weird issue upon reloading the page
 });
 
-document.getElementById("copyright").textContent = `© ${getYear()} Tester.`;
+document.getElementById(
+    "copyright"
+).textContent = `© ${getYear()} Bobby Elmore, Tester. No warranties expressed or implied.`;
