@@ -4,14 +4,8 @@
     "blankText": "___",
     "questions": {
         "Who may suggest a bill?": "Any concerned citizen",
-        "Representatives must live in the state they represent and meet what two other requirements?": [
-            "must be at least 25 years old",
-            "must have been a U.S. citizen at least 7 years"
-        ],
-        "Senators must live in the state they represent and meet what two other requirements?": [
-            "must be at least 30 years old",
-            "must have been a U.S. citizen at least 9 years"
-        ],
+        "Representatives must live in the state they represent and meet what two other requirements?": "must be at least 25 years old, must have been a U.S. citizen at least 7 years",
+        "Senators must live in the state they represent and meet what two other requirements?": "must be at least 30 years old, must have been a U.S. citizen at least 9 years",
         "How many senators are there?": "100",
         "How long is a senator’s term of office?": "6 years",
         "Which house represents the states?": "Senate",
@@ -27,15 +21,8 @@
         "What does it mean to convene?": "To assemble",
         "With only a few exceptions, a bill may be started in either house. Bills involving money must begin in which house?": "House of Representatives",
         "If a state has 29 electoral votes, how many representatives does the state have in the House of Representatives?": "27",
-        "What are the three branches of government?": [
-            "Legislative",
-            "Executive",
-            "Judicial"
-        ],
-        "Our government is unique because it is both {blank} and {blank}.": [
-            "Flexible",
-            "stable"
-        ],
+        "What are the three branches of government?": "Legislative, Executive, Judicial",
+        "Our government is unique because it is both {blank} and {blank}.": "Flexible, stable",
         "What is the job of the Legislative Branch of government?": "To make laws",
         "What is a one-house legislature called?": "Unicameral",
         "When does Congress convene?": "January 3rd",
@@ -44,10 +31,7 @@
         "According to our founding fathers, if your government isn’t serving your needs you have the duty to {blank}.": "Change it",
         "Who is in charge of the House of Representatives?": "Speaker of the House",
         "Who is the current Speaker of the House?": "Mike Johnson (R) LA",
-        "Who are the current CA senators?": [
-            "Laphonza Butler (D)",
-            "Alex Padilla (D)"
-        ],
+        "Who are the current CA senators?": "Laphonza Butler (D), Alex Padilla (D)",
         "What number is a quorum in the House of Representatives?": "218",
         "Who is the current President Pro Tempore of the Senate?": "Patty Murray (D) WA",
         "How does the President Pro Tempore get his job?": "Must be the senior senator of the majority party",
@@ -58,33 +42,21 @@
         "Can the President Pro Tempore vote on Senate issues?": "Yes",
         "Who succeeds the Vice President as President of the United States?": "Speaker of the House",
         "What is a filibuster?": "When a senator talks endlessly to delay action on a bill.",
-        "What does the rules committee do?": [
-            "Sends a bill to its proper committee",
-            "Makes specific rules for individual bills"
-        ],
+        "What does the rules committee do?": "Sends a bill to its proper committee, Makes specific rules for individual bills",
         "Can the Vice President vote on Senate issues?": "No-unless there is a tie",
         "What is a “quorum”?": "The number necessary to legally do business (in our government 1 more than half)",
         "Is there a limit on debate in the House of Representatives?": "Yes-1 Hour",
         "How many representatives are in the House of Representatives?": "435",
-        "What are the two major political parties in the U.S.?": [
-            "Democrats",
-            "Republicans"
-        ],
+        "What are the two major political parties in the U.S.?": "Democrats, Republicans",
         "A representative’s term of office is {blank} years.": "2",
-        "What are the names of the two houses in our federal government?": [
-            "House of Representatives",
-            "Senate"
-        ],
+        "What are the names of the two houses in our federal government?": "House of Representatives, Senate",
         "How do we decide how many senators a state has?": "Each state has 2",
         "The Speaker of the House must always be a member of the {blank} party.": "Majority",
         "Which house represents the people?": "House of Representatives",
         "Does the U.S. Constitution say that we have two political parties?": "No",
         "For a bill to become a law it must pass both houses, true or false?": "True",
         "Who elects the Speaker of the House?": "Direct vote of the House",
-        "To keep one branch from gaining too much power, we have a system of {blank} and {blank}.": [
-            "Checks",
-            "balances"
-        ],
+        "To keep one branch from gaining too much power, we have a system of {blank} and {blank}.": "Checks, balances",
         "What fraction of our senators is elected every 2 years?": "1/3",
         "When the population of the U.S. is officially counted, we call that count a {blank}.": "Census",
         "A committee consisting of members from both houses is called a {blank} committee.": "Joint or conference",
