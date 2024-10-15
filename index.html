@@ -67,10 +67,14 @@
                     <div class="custom-file-input">
                         <input type="file" id="json-input" accept=".json" />
                         <label for="json-input">Choose File</label>
-                        <span id="file-name">No file chosen.</span>
+                        <span id="file-name">No file selected.</span>
                     </div>
                     <div id="main-buttons">
-                        <button class="main-button" id="start-button">
+                        <button
+                            class="main-button"
+                            id="start-button"
+                            onclick="initiateTest()"
+                        >
                             Start Test
                         </button>
                         <button
@@ -236,8 +240,12 @@
                 <button class="close-button" onclick="displayDiv('test-modal')">
                     &times;
                 </button>
-                <h1>Test</h1>
+                <h1 id="test-title"></h1>
                 <hr />
+                <div id="test-content">
+                    <h2 id="test-label"></h2>
+                    <h2 id="test-question"></h2>
+                </div>
             </div>
         </div>
 

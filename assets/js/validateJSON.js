@@ -1,11 +1,14 @@
 class JSONValidator {
-    constructor(inputElementId) {
+    constructor(inputElementId, fileNameSpan) {
         let JSONInput = document.getElementById(inputElementId);
+        let nameText = document.getElementById(fileNameSpan);
+
         JSONInput.addEventListener("change", async (event) => {
             const jsonData = await this.validateJSON(event);
             if (!jsonData) {
-                this.resetJSON(JSONInput);
+                this.resetJSON(nameText);
             } else {
+                nameText.textContent = JSONInput.files[0].name;
                 this.testReady = true;
             }
         });
@@ -50,6 +53,7 @@ class JSONValidator {
     }
 
     resetJSON(element) {
-        element.value = "";
+        element.textContent = "No file selected.";
+        this.testReady = false;
     }
 }

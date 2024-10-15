@@ -1,4 +1,4 @@
-const validator = new JSONValidator("json-input");
+const validator = new JSONValidator("json-input", "file-name");
 
 function initiateTest() {
     if (validator.testReady) {
@@ -7,10 +7,6 @@ function initiateTest() {
         console.log("Test is not ready to start.");
     }
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("json-input").value = ""; // Solves a weird issue upon reloading the page
-});
 
 document.getElementById(
     "copyright"
