@@ -20,11 +20,13 @@ class RunTest {
         }/${this.test.getQuestions().length}</h1><h2>${this.test.label}-${
             this.test.questionLabelNumber
         }: ${this.test.blankTextReplace(this.test.currentQuestionText)}</h2>`;
-        // this.renderAnswers();
+        this.renderAnswers();
     }
 
     renderAnswers() {
-        // Render the answers
+        document.getElementById(
+            "test-answers"
+        ).innerHTML = `${this.test.currentAnswers}`;
     }
 }
 
@@ -44,7 +46,7 @@ class Test {
         this.currentQuestionText = "";
         this.questionLabelNumber = 0;
 
-        this.correctAnswers = this.getAnswers();
+        this.correctAnswer = "";
         this.currentAnswers = [];
     }
 
@@ -58,7 +60,9 @@ class Test {
             this.currentQuestionText
         );
 
-        //this.currentAnswers = self.generateAnswers();
+        this.correctAnswer = this.answerForQuestion(this.currentQuestionText);
+
+        this.currentAnswers = this.generateAnswers(this.correctAnswer);
 
         this.currentQuestion++;
     }
@@ -68,7 +72,11 @@ class Test {
     }
 
     generateAnswers(correctAnswer) {
-        // Generate 3 answers not including correctAnswer from this.getAnswers()
+        let answers = randomizeArray(this.getAnswers());
+        answers.splice(answers.indexOf(correctAnswer), 1);
+        let selectedAnswers = answers.slice(0, 3);
+        selectedAnswers.push(correctAnswer);
+        return randomizeArray(selectedAnswers);
     }
 
     getQuestionLabelNumber(question) {
