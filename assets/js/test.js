@@ -15,9 +15,11 @@ class RunTest {
     }
 
     renderDiv() {
-        document.getElementById(
-            "test-content"
-        ).innerHTML = `<h1>${this.test.title}</h1><h2>${this.test.label}: ${this.test.currentQuestion}</h2>`;
+        document.getElementById("test-content").innerHTML = `<h1>Question: ${
+            this.test.currentQuestion + 1
+        }/${this.test.getQuestions().length}</h1><h2>${this.test.label}-${
+            this.test.questionLabelNumber
+        }: ${this.test.blankTextReplace(this.test.currentQuestionText)}</h2>`;
     }
 }
 
@@ -25,39 +27,50 @@ class Test {
     constructor(testJSON) {
         this.testJSON = testJSON;
         this.setupTest();
+        this.iterateQuestion();
     }
 
     setupTest() {
-        this.title = this.testJSON.title;
         this.label = this.testJSON.label;
 
-        this.questions = this.blankTextReplace(this.getQuestions());
+        this.questions = randomizeArray(this.getQuestions());
         this.questionsObject = this.testJSON.questions;
 
         this.currentQuestion = 0;
+        this.currentQuestionText = "";
+        this.questionLabelNumber = 0;
+
+        this.correctAnswers = this.getAnswers();
         this.currentAnswers = [];
     }
 
-    blankTextReplace(arr) {
-        const blankText = this.testJSON.blankText;
-
-        for (let i = 0; i < arr.length; i++) {
-            arr[i] = arr[i].replace("{blank}", blankText);
-        }
-
-        return arr;
+    blankTextReplace(str) {
+        return str.replace("{blank}", this.testJSON.blankText);
     }
 
     iterateQuestion() {
-        this.currentQuestion++;
+        if (this.currentQuestion !== 0) {
+            currentQuestion++;
+        }
 
-        this.currentAnswers = self.generateAnswers();
+        this.currentQuestionText = this.questions[this.currentQuestion];
+        this.questionLabelNumber = this.getQuestionLabelNumber(
+            this.currentQuestionText
+        );
+
+        //this.currentAnswers = self.generateAnswers();
     }
 
-    generateAnswers(question) {
-        const questionText = this.questions[question];
+    answerForQuestion(question) {
+        return this.questionsObject[question];
+    }
 
-        // Add the answer, and three random answers to the currentAnswers array
+    generateAnswers(correctAnswer) {
+        // Generate 3 answers not including correctAnswer from this.getAnswers()
+    }
+
+    getQuestionLabelNumber(question) {
+        return this.getQuestions().indexOf(question) + 1;
     }
 
     getQuestions() {

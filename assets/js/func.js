@@ -10,3 +10,7 @@ function displayDiv(divId) {
 function getYear() {
     return new Date().getFullYear();
 }
+
+function randomizeArray(arr) {
+    return arr.sort(() => Math.random() - 0.5);
+}
