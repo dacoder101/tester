@@ -24,9 +24,19 @@ class RunTest {
     }
 
     renderAnswers() {
-        document.getElementById(
-            "test-answers"
-        ).innerHTML = `${this.test.currentAnswers}`;
+        let displayedHTML = "";
+        for (let i = 0; i < this.test.currentAnswers.length; i++) {
+            displayedHTML += `<button onclick="submitAnswer(event)">${this.test.currentAnswers[i]}</button>`;
+        }
+        document.getElementById("test-answers").innerHTML = displayedHTML;
+    }
+
+    checkAnswer(answer) {
+        if (answer === this.test.correctAnswer) {
+            alert("Correct!");
+        }
+
+        this.nextQuestion();
     }
 }
 
