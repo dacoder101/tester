@@ -49,9 +49,13 @@ class RunTest {
         this.nextQuestion();
     }
 
-    correctAnswerDisplay() {}
+    correctAnswerDisplay() {
+        document.getElementById("test-content").style.backgroundColor = "green";
+    }
 
-    incorrectAnswerDisplay() {}
+    incorrectAnswerDisplay() {
+        document.getElementById("test-content").style.backgroundColor = "red";
+    }
 }
 
 class Test {
