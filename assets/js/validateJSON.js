@@ -20,7 +20,6 @@ class JSONValidator {
         const jsonData = this.parseJSON(fileContent);
 
         if (!jsonData || !this.testKeyValidity(jsonData)) {
-            alert("Invalid JSON file.");
             return;
         }
 
@@ -54,7 +53,7 @@ class JSONValidator {
     }
 
     resetJSON(element) {
-        element.textContent = "No file selected.";
+        element.textContent = "Invalid JSON file.";
         this.testReady = false;
     }
 }
