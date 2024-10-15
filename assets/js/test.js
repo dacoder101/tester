@@ -41,10 +41,17 @@ class RunTest {
     checkAnswer(answer) {
         if (answer !== this.test.correctAnswer) {
             this.test.incorrectQuestions++;
+            this.incorrectAnswerDisplay();
+        } else {
+            this.correctAnswerDisplay();
         }
 
         this.nextQuestion();
     }
+
+    correctAnswerDisplay() {}
+
+    incorrectAnswerDisplay() {}
 }
 
 class Test {
