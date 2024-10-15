@@ -82,7 +82,7 @@ class Test {
     }
 
     blankTextReplace(str) {
-        return str.replace("{blank}", this.testJSON.blankText);
+        return str.replace(new RegExp("{blank}", "g"), this.testJSON.blankText);
     }
 
     iterateQuestion() {
@@ -104,7 +104,7 @@ class Test {
 
     generateAnswers(correctAnswer) {
         let answers = randomizeArray(this.getAnswers());
-        answers.splice(answers.indexOf(correctAnswer), 1);
+        answers = answers.filter((answer) => answer !== correctAnswer);
         let selectedAnswers = answers.slice(0, 3);
         selectedAnswers.push(correctAnswer);
         return randomizeArray(selectedAnswers);
