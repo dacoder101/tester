@@ -11,9 +11,27 @@
     </head>
     <body>
         <noscript class="above-container">
-            <img width="64px" src="./assets/img/icons/nojs.png" alt="No JavaScript" />
-            <p><u>JavaScript is required to use Tester.</u> Please enable JavaScript in your browser's settings.</p>
+            <img
+                width="64px"
+                src="./assets/img/icons/nojs.png"
+                alt="No JavaScript"
+            />
+            <u>JavaScript is required to use Tester.</u>
+            <p>Please enable JavaScript in your browser's settings.</p>
         </noscript>
+        <div class="above-container" id="cc-2024-notice">
+            <img
+                width="64px"
+                src="./assets/img/icons/bhms.png"
+                alt="BHMS Logo"
+            />
+            <p>
+                <u>Looking for the Constitutional Challenge tests?</u
+                ><br /><br />
+                These tests aren't currently public, and will only be available
+                to certain classes.
+            </p>
+        </div>
         <div class="container">
             <div id="div-buttons">
                 <button
@@ -49,11 +67,20 @@
                     <div class="custom-file-input">
                         <input type="file" id="json-input" accept=".json" />
                         <label for="json-input">Choose File</label>
-                        <span id="file-name">No file chosen</span>
+                        <span id="file-name">No file chosen.</span>
                     </div>
-                    <button class="main-button" id="start-button">
-                        Start Test
-                    </button>
+                    <div id="main-buttons">
+                        <button class="main-button" id="start-button">
+                            Start Test
+                        </button>
+                        <button
+                            class="main-button side-main-button"
+                            id="preset-button"
+                            onclick="displayDiv('preset-modal')"
+                        >
+                            View Presets
+                        </button>
+                    </div>
                 </div>
             </div>
             <hr class="main-content-divider" />
@@ -74,6 +101,12 @@
                 </button>
                 <h1>Settings</h1>
                 <hr />
+                <p>
+                    Coming soon. Will include settings outlined on the
+                    <a href="https://github.com/dacoder101/tester/"
+                        >GitHub repository</a
+                    > when created.
+                </p>
             </div>
         </div>
         <div class="modal" id="info-modal" style="display: none">
@@ -126,8 +159,7 @@
                 <h2>How can I use Tester?</h2>
                 <p>
                     Tester requires a preexisting JSON file to be imported. To
-                    make your own test, please see
-                    "Creating a JSON file" below.
+                    make your own test, please see "Creating a JSON file" below.
                     You can also use preset tests available on the main page!
                 </p>
                 <h2>How do I import a JSON file?</h2>
@@ -138,20 +170,54 @@
                 </p>
                 <h2>Creating a JSON file</h2>
                 <p>
-                    All JSON tests require the following keys. Please see the examples on my <a href="https://github.com/dacoder101/tester/">GitHub repository</a> for more information.
-                    <ul>
-                        <li>
-                            <code>title</code> - The title of the test. Should be of type <code>string</code>.
-                        </li>
-                        <li>
-                            <code>label</code> - The label of the test, primarily used when selecting multiple tests at once. Should be of type <code>string</code>.
-                        </li>
-                        <li>
-                            <code>blankText</code> - Replaces all instances of <code>{blank}</code> in the question object with this value. Should be of type <code>string</code>.
-                        <li>
-                            <code>questions</code> - An <code>object</code> containing the questions along with their answers.
-                        </li>
-                    </ul>
+                    All JSON tests require the following keys. Please see the
+                    examples on my
+                    <a href="https://github.com/dacoder101/tester/"
+                        >GitHub repository</a
+                    >
+                    for more information.
+                </p>
+
+                <ul>
+                    <li>
+                        <code>title</code> - The title of the test. Should be of
+                        type <code>string</code>.
+                    </li>
+                    <li>
+                        <code>label</code> - The label of the test, primarily
+                        used when selecting multiple tests at once. Should be of
+                        type <code>string</code>.
+                    </li>
+                    <li>
+                        <code>blankText</code> - Replaces all instances of
+                        <code>{blank}</code> in the question object with this
+                        value. Should be of type <code>string</code>.
+                    </li>
+
+                    <li>
+                        <code>questions</code> - An
+                        <code>object</code> containing the questions along with
+                        their answers.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="modal" id="preset-modal" style="display: none">
+            <div class="modal-content">
+                <button
+                    class="close-button"
+                    onclick="displayDiv('preset-modal')"
+                >
+                    &times;
+                </button>
+                <h1>Preset Tests</h1>
+                <hr />
+                <p>
+                    Coming soon. Please see the
+                    <a href="https://github.com/dacoder101/tester/"
+                        >GitHub repository</a
+                    >
+                    for presets to download.
                 </p>
             </div>
         </div>

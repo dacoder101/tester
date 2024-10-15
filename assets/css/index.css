@@ -165,8 +165,21 @@ input[type="file"],
     margin: 0.5rem 0;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    width: 100%;
     border-radius: 4px;
+}
+
+#main-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-button {
+    flex: 0.7;
+}
+
+.side-main-button {
+    flex: 0.2;
 }
 
 input[type="file"]::file-selector-button {
@@ -212,13 +225,12 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ffcc00;
-    color: #000;
+    color: var(--text-color);
     padding: 1rem;
     margin: 1rem auto;
-    border: 1px solid #cc9900;
+    border: 1px solid;
     border-radius: 4px;
-    text-align: left; /* Align text to the left */
+    text-align: left;
     font-size: 1rem;
     font-weight: bold;
     max-width: 400px;
@@ -231,8 +243,18 @@ footer {
     z-index: 3;
 }
 
-noscript img {
-    margin-right: 1rem; /* Space between image and text */
+.above-container img {
+    margin-right: 1rem;
+}
+
+#cc-2024-notice {
+    border-color: #ff1744;
+    background-color: var(--background-color);
+}
+
+noscript {
+    border-color: #cc9900;
+    background-color: #ffcc00;
 }
 
 .modal {
