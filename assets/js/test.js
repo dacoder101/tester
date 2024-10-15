@@ -10,7 +10,7 @@ class RunTest {
             this.test.iterateQuestion();
             this.renderDiv();
         } else {
-            alert("Test complete!");
+            this.renderTestCompletion();
         }
     }
 
@@ -31,9 +31,16 @@ class RunTest {
         document.getElementById("test-answers").innerHTML = displayedHTML;
     }
 
+    renderTestCompletion() {
+        document.getElementById(
+            "test-content"
+        ).innerHTML = `<h1>${this.test.title} Complete!</h1><h3>Questions Incorrect: ${this.test.incorrectQuestions}</h3>`;
+        document.getElementById("test-answers").innerHTML = "";
+    }
+
     checkAnswer(answer) {
-        if (answer === this.test.correctAnswer) {
-            alert("Correct!");
+        if (answer !== this.test.correctAnswer) {
+            this.test.incorrectQuestions++;
         }
 
         this.nextQuestion();
@@ -47,6 +54,7 @@ class Test {
     }
 
     setupTest() {
+        this.title = this.testJSON.title;
         this.label = this.testJSON.label;
 
         this.questions = randomizeArray(this.getQuestions());
@@ -58,6 +66,8 @@ class Test {
 
         this.correctAnswer = "";
         this.currentAnswers = [];
+
+        this.incorrectQuestions = 0;
     }
 
     blankTextReplace(str) {
