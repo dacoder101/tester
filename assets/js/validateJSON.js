@@ -9,6 +9,7 @@ class JSONValidator {
                 this.resetJSON(nameText);
             } else {
                 nameText.textContent = JSONInput.files[0].name;
+                this.jsonData = jsonData;
                 this.testReady = true;
             }
         });

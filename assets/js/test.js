@@ -1,7 +1,11 @@
 class RunTest {
-    constructor(testJSON, testingElementId) {
+    constructor(testJSON) {
         this.test = new Test(testJSON);
-        this.testingElement = document.getElementById(testingElementId);
+        this.startTest();
+    }
+
+    startTest() {
+        displayDiv("test-modal");
     }
 }
 
@@ -11,10 +15,10 @@ class Test {
     }
 
     getQuestions() {
-        return this.testJSON.questions.map((question) => question.question);
+        return this.testJSON.questions;
     }
 
     getAnswers() {
-        return this.testJSON.questions.map((question) => question.answer);
+        return Object.values(this.testJSON.questions);
     }
 }
