@@ -227,12 +227,26 @@
                 <h1>Preset Tests</h1>
                 <hr />
                 <p>
-                    Coming soon. Please see the
-                    <a href="https://github.com/dacoder101/tester/"
-                        >GitHub repository</a
-                    >
-                    for presets to download.
+                    Select a preset test, then click "Start Test" on the main
+                    page to begin.
                 </p>
+                <div id="preset-tests">
+                    <button
+                        onclick="loadPreset('./assets/presets/preconstitution-cards.json')"
+                    >
+                        Preconstitution Cards
+                    </button>
+                    <button
+                        onclick="loadPreset('./assets/presets/article-one.json')"
+                    >
+                        Article One Cards (Legislative Branch)
+                    </button>
+                    <button
+                        onclick="loadPreset('./assets/presets/article-two.json')"
+                    >
+                        Article Two Cards (Executive Branch)
+                    </button>
+                </div>
             </div>
         </div>
         <div class="modal" id="test-modal" style="display: none">

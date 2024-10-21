@@ -165,5 +165,3 @@ dist
 server.js
 package-lock.json
 package.json
-
-assets/presets/*
