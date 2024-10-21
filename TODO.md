@@ -1,0 +1,5 @@
+-   Test statistics menu
+-   Multiple tests at once
+-   Messages for selecting presets
+-   Messages for correct and incorrect questions
+-   Changelog maybe?

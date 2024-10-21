@@ -157,7 +157,8 @@ header p {
 }
 
 input[type="file"],
-.main-button {
+.main-button,
+.preset-button {
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
@@ -194,6 +195,7 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]:hover,
 .main-button:hover,
+.preset-button:hover,
 input[type="file"]::file-selector-button:hover {
     transform: scale(1.05);
     background-color: var(--secondary-color);

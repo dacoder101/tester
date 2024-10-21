@@ -28,8 +28,8 @@
             <p>
                 <u>Looking for the Constitutional Challenge tests?</u
                 ><br /><br />
-                These tests aren't currently public, and will only be available
-                to certain classes.
+                These tests are now available in the View Presets menu! Click on
+                the respective test to begin.
             </p>
         </div>
         <div class="container">
@@ -82,7 +82,7 @@
                             id="preset-button"
                             onclick="displayDiv('preset-modal')"
                         >
-                            View Presets
+                            View Presets (New!)
                         </button>
                     </div>
                 </div>
@@ -232,16 +232,19 @@
                 </p>
                 <div id="preset-tests">
                     <button
+                        class="preset-button"
                         onclick="loadPreset('./assets/presets/preconstitution-cards.json')"
                     >
                         Preconstitution Cards
                     </button>
                     <button
+                        class="preset-button"
                         onclick="loadPreset('./assets/presets/article-one.json')"
                     >
                         Article One Cards (Legislative Branch)
                     </button>
                     <button
+                        class="preset-button"
                         onclick="loadPreset('./assets/presets/article-two.json')"
                     >
                         Article Two Cards (Executive Branch)
