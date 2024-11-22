@@ -3,3 +3,5 @@
 -   Messages for selecting presets
 -   Messages for correct and incorrect questions
 -   Changelog maybe?
+-   Preset Selection notice message
+-   Investigate different viewports
