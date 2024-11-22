@@ -28,6 +28,7 @@ async function loadPreset(filePath) {
 
         const event = new Event("change");
         fileInput.dispatchEvent(event);
+        displayDiv("preset-modal");
     } catch (error) {
         console.error("Error loading file:", error);
         return null;
