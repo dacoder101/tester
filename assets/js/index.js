@@ -10,29 +10,16 @@ function initiateTest() {
 async function loadPreset(filePath) {
     let fileInput = document.getElementById("json-input");
 
-    try {
-        const response = await fetch(filePath);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+    const response = await fetch(filePath);
+    const file = new File([await response.text()], filePath.split("/").pop(), {
+        type: "application/json",
+    });
 
-        const fileContent = await response.text();
-        const fileName = filePath.split("/").pop();
-        const file = new File([fileContent], fileName, {
-            type: "application/json",
-        });
+    const dataTransfer = new DataTransfer().items.add(file);
+    fileInput.files = dataTransfer.files;
 
-        const dataTransfer = new DataTransfer();
-        dataTransfer.items.add(file);
-        fileInput.files = dataTransfer.files;
-
-        const event = new Event("change");
-        fileInput.dispatchEvent(event);
-        displayDiv("preset-modal");
-    } catch (error) {
-        console.error("Error loading file:", error);
-        return null;
-    }
+    fileInput.dispatchEvent(new Event("change"));
+    displayDiv("preset-modal");
 }
 
 function submitAnswer(event) {
