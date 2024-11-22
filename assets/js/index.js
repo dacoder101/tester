@@ -15,7 +15,8 @@ async function loadPreset(filePath) {
         type: "application/json",
     });
 
-    const dataTransfer = new DataTransfer().items.add(file);
+    const dataTransfer = new DataTransfer();
+    dataTransfer.items.add(file);
     fileInput.files = dataTransfer.files;
 
     fileInput.dispatchEvent(new Event("change"));

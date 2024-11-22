@@ -26,10 +26,10 @@
                 alt="BHMS Logo"
             />
             <p>
-                <u>Looking for the Constitutional Challenge tests?</u
+                <u>Looking for the Constitutional Challenge cards?</u
                 ><br /><br />
-                These tests are now available in the View Presets menu! Click on
-                the respective test to begin.
+                All cards are available in the View Presets menu. Select the
+                test by clicking it in the preset menu.
             </p>
         </div>
         <div class="container">
@@ -82,7 +82,7 @@
                             id="preset-button"
                             onclick="displayDiv('preset-modal')"
                         >
-                            View Presets (New!)
+                            View Presets
                         </button>
                     </div>
                 </div>
@@ -204,8 +204,9 @@
                     </li>
                     <li>
                         <code>blankText</code> - Replaces all instances of
-                        <code>{blank}</code> in the question object with this
-                        value. Should be of type <code>string</code>.
+                        <code>{blank}</code> in the keys of the question object
+                        with a value, usually underscores. Should be of type
+                        <code>string</code>.
                     </li>
 
                     <li>
@@ -239,25 +240,25 @@
                     </button>
                     <button
                         class="preset-button"
-                        onclick="loadPreset('assets/presets/article-one.json')"
+                        onclick="loadPreset('./assets/presets/article-one.json')"
                     >
                         Article One Cards (Legislative Branch)
                     </button>
                     <button
                         class="preset-button"
-                        onclick="loadPreset('assets/presets/article-two.json')"
+                        onclick="loadPreset('./assets/presets/article-two.json')"
                     >
                         Article Two Cards (Executive Branch)
                     </button>
                     <button
                         class="preset-button"
-                        onclick="loadPreset('assets/presets/article-three.json')"
+                        onclick="loadPreset('./assets/presets/article-three.json')"
                     >
                         Article Three Cards (Judicial Branch)
                     </button>
                     <button
                         class="preset-button"
-                        onclick="loadPreset('assets/presets/ammendment-article.json')"
+                        onclick="loadPreset('./assets/presets/ammendment-article.json')"
                     >
                         Ammendment/Article Cards
                     </button>
