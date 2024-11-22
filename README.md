@@ -2,6 +2,8 @@
 
 If you've ever needed to quickly generate methods for studying, Tester combined with any AI method may be beneficial to you.
 
+*The current version has a couple of possibly annoying bugs; there are also future planned QoL features. Please see TODO.md for a list.*
+
 ## What is Tester?
 
 Tester is a simple static web tool for testing yourself. It uses importable JSON configuration files to quickly help you review information that would usually be written down on flashcards. It randomizes questions and provides multiple choice answers (answers from other questions). You can subdivide multiple tests and combine as necessary to aid memorization.
