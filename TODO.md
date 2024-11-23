@@ -6,4 +6,4 @@
 -   Preset Selection notice message
 -   Investigate different viewports
 -   Fix: JSON files with less than four keys in the question object won't work
--   Fix: Two values equal to each other in the question object can be displayed at the same time
+-   Fix: Presets aren't loading in non-hosted documents
