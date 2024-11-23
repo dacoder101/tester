@@ -8,13 +8,13 @@ class RunTest {
     nextQuestion() {
         if (this.test.currentQuestion < this.test.getQuestions().length) {
             this.test.iterateQuestion();
-            this.renderDiv();
+            this.renderTestingDiv();
         } else {
             this.renderTestCompletion();
         }
     }
 
-    renderDiv() {
+    renderTestingDiv() {
         document.getElementById("test-content").innerHTML = `<h1>Question: ${
             this.test.currentQuestion
         }/${this.test.getQuestions().length}</h1><h2>${this.test.label}-${
@@ -103,11 +103,19 @@ class Test {
     }
 
     generateAnswers(correctAnswer) {
-        let answers = randomizeArray(this.getAnswers());
-        answers = answers.filter((answer) => answer !== correctAnswer);
-        let selectedAnswers = answers.slice(0, 3);
-        selectedAnswers.push(correctAnswer);
-        return randomizeArray(selectedAnswers);
+        let answers = this.getAnswers();
+        let filteredAnswers = [correctAnswer];
+
+        while (filteredAnswers.length <= 3) {
+            let possibleAnswer =
+                answers[getRandomNumber(0, answers.length - 1)];
+
+            if (!filteredAnswers.includes(possibleAnswer)) {
+                filteredAnswers.push(possibleAnswer);
+            }
+        }
+
+        return randomizeArray(filteredAnswers);
     }
 
     getQuestionLabelNumber(question) {
