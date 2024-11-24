@@ -6,4 +6,5 @@
 -   Preset Selection notice message
 -   Investigate different viewports
 -   Fix: JSON files with less than four keys in the question object won't work
+-   Fix: JSON files with all the same answers will hang the website (hypothetically)
 -   Fix: Presets aren't loading in non-hosted documents
