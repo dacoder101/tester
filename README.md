@@ -2,7 +2,7 @@
 
 If you've ever needed to quickly generate methods for studying, Tester combined with any AI method may be beneficial to you.
 
-*The current version has a couple of possibly annoying bugs; there are also future planned QoL features. Please see TODO.md for a list.*
+*Tester will be undergoing feature additions soon! See TODO.md for more info.*
 
 ## What is Tester?
 
