@@ -20,9 +20,11 @@ class JSONValidator {
         const jsonData = this.parseJSON(fileContent);
 
         if (
-            !jsonData ||
-            !this.testKeyValidity(jsonData) ||
-            !this.testQuestionKeyValidity(jsonData)
+            [
+                jsonData,
+                this.testKeysValidity(jsonData),
+                this.questionKeyValidity(jsonData),
+            ].some((value) => !value)
         ) {
             return;
         }
@@ -48,7 +50,7 @@ class JSONValidator {
         }
     }
 
-    testKeyValidity(json) {
+    testKeysValidity(json) {
         const keys = Object.keys(json);
         console.log(keys);
         const validKeys = ["title", "label", "blankText", "questions"];
@@ -56,11 +58,17 @@ class JSONValidator {
         return keys.every((key) => validKeys.includes(key));
     }
 
-    testQuestionKeyValidity(json) {
-        return true;
+    questionKeyValidity(json) {
+        function testQuestionKey() {
+            return true;
+        }
+
+        return [testQuestionKey(), this.questionKeyValuesValidity(json)].every(
+            (value) => value
+        );
     }
 
-    testQuestionValueValidity(json) {
+    questionKeyValuesValidity(json) {
         return true;
     }
 
