@@ -7,6 +7,14 @@ function displayDiv(divId) {
     }
 }
 
+function presetDisplayDiv() {
+    if (isHTMLLocal()) {
+        displayDiv("local-preset-modal");
+    } else {
+        displayDiv("preset-modal");
+    }
+}
+
 function getYear() {
     return new Date().getFullYear();
 }
