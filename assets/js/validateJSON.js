@@ -64,30 +64,50 @@ class JSONValidator {
     testQuestionKeyValidity(json) {
         const questions = json.questions;
 
-        if (questions.length < 4) {
-            console.error(
-                `Not enough questions. Got ${questions.length}, need at least 4.`
-            );
+        function sufficientQuestions() {
+            if (questions.length < 4) {
+                throw new LessThanFourQuestionsException();
+            }
 
-            return false;
+            return true;
         }
 
-        const answers = Object.values(questions);
-        const uniqueAnswers = new Set();
+        function stringAnswers() {
+            const answers = Object.values(questions);
 
-        answers.forEach((answer) => {
-            uniqueAnswers.add(answer);
-        });
+            return answers.every((answer) => {
+                if (typeof answer !== "string") {
+                    throw new AnswerIsNotStringException();
+                }
 
-        if (uniqueAnswers.size < 4) {
-            console.error(
-                `Not enough unique answers. Got ${uniqueAnswers.size}, need at least 4.`
-            );
-
-            return false;
+                return true;
+            });
         }
 
-        return true;
+        function uniqueAnswers() {
+            const answers = Object.values(questions);
+            const uniqueAnswers = new Set();
+
+            answers.forEach((answer) => {
+                uniqueAnswers.add(answer);
+            });
+
+            if (uniqueAnswers.size < 4) {
+                throw new NotEnoughUniqueAnswersException();
+            }
+
+            return true;
+        }
+
+        try {
+            sufficientQuestions();
+            stringAnswers();
+            uniqueAnswers();
+            return true;
+        } catch (error) {
+            console.error(error);
+            return false;
+        }
     }
 
     resetJSON(element) {
