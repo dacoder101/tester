@@ -18,3 +18,11 @@ function randomizeArray(arr) {
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function isHTMLLocal() {
+    if (window.location.protocol === "file:") {
+        return true;
+    }
+
+    return false;
+}
