@@ -16,7 +16,7 @@ You can access Tester at [https://dacoder101.github.io/tester/](dacoder101.githu
 {
     "title": "The title of your test!",
     "label": "The label of your test!",
-    "blankText": "___",
+    "blankText": "___", // Replace {blank} in questions. Good for fill in the blanks!
     "questions": {
         "Your Question!": "Your Answer!"
         // You may want to use AI to generate the JSON file for you.
