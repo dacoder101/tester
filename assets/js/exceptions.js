@@ -13,3 +13,13 @@ class NotEnoughUniqueAnswersException extends Error {
         Error.captureStackTrace(this, this.constructor);
     }
 }
+
+class AnswerIsNotStringException extends Error {
+    constructor() {
+        super(
+            "All answers must be of type string. Arrays are not currently supported."
+        );
+        this.name = this.constructor.name;
+        Error.captureStackTrace(this, this.constructor);
+    }
+}

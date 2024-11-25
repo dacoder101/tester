@@ -11,6 +11,10 @@ class JSONValidator {
                 nameText.textContent = JSONInput.files[0].name;
                 this.jsonData = jsonData;
                 this.testReady = true;
+                console.log(
+                    `JSON file successfully loaded: ${JSONInput.files[0].name}`
+                );
+                console.log(jsonData);
             }
         });
     }
@@ -23,7 +27,7 @@ class JSONValidator {
             [
                 jsonData,
                 this.testKeysValidity(jsonData),
-                this.questionKeyValidity(jsonData),
+                this.testQuestionKeyValidity(jsonData),
             ].some((value) => !value)
         ) {
             return;
@@ -52,28 +56,42 @@ class JSONValidator {
 
     testKeysValidity(json) {
         const keys = Object.keys(json);
-        console.log(keys);
         const validKeys = ["title", "label", "blankText", "questions"];
 
         return keys.every((key) => validKeys.includes(key));
     }
 
-    questionKeyValidity(json) {
-        function testQuestionKey() {
-            return true;
+    testQuestionKeyValidity(json) {
+        const questions = json.questions;
+
+        if (questions.length < 4) {
+            console.error(
+                `Not enough questions. Got ${questions.length}, need at least 4.`
+            );
+
+            return false;
         }
 
-        return [testQuestionKey(), this.questionKeyValuesValidity(json)].every(
-            (value) => value
-        );
-    }
+        const answers = Object.values(questions);
+        const uniqueAnswers = new Set();
 
-    questionKeyValuesValidity(json) {
+        answers.forEach((answer) => {
+            uniqueAnswers.add(answer);
+        });
+
+        if (uniqueAnswers.size < 4) {
+            console.error(
+                `Not enough unique answers. Got ${uniqueAnswers.size}, need at least 4.`
+            );
+
+            return false;
+        }
+
         return true;
     }
 
     resetJSON(element) {
-        element.textContent = "Invalid JSON file.";
+        element.textContent = "Invalid file. See console.";
         this.testReady = false;
     }
 }
