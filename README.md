@@ -10,7 +10,7 @@ Tester is a simple static web tool for testing yourself. It uses importable JSON
 
 ## How can I use it?
 
-You can access Tester at [dacoder101.github.io/tester/](https://dacoder101.github.io/tester). Import a valid configuration file, and start testing! If you need help creating a configuration file, fill out the following,
+You can access Tester at [dacoder101.github.io/tester](https://dacoder101.github.io/tester/). Import a valid configuration file, and start testing! If you need help creating a configuration file, fill out the following,
 
 ```json
 {
