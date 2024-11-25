@@ -19,7 +19,11 @@ class JSONValidator {
         const fileContent = await this.readFile(event.target.files[0]);
         const jsonData = this.parseJSON(fileContent);
 
-        if (!jsonData || !this.testKeyValidity(jsonData)) {
+        if (
+            !jsonData ||
+            !this.testKeyValidity(jsonData) ||
+            !this.testQuestionKeyValidity(jsonData)
+        ) {
             return;
         }
 
@@ -50,6 +54,14 @@ class JSONValidator {
         const validKeys = ["title", "label", "blankText", "questions"];
 
         return keys.every((key) => validKeys.includes(key));
+    }
+
+    testQuestionKeyValidity(json) {
+        return true;
+    }
+
+    testQuestionValueValidity(json) {
+        return true;
     }
 
     resetJSON(element) {
