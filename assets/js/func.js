@@ -7,6 +7,14 @@ function displayDiv(divId) {
     }
 }
 
+function presetDisplayDiv() {
+    if (isHTMLLocal()) {
+        displayDiv("local-preset-modal");
+    } else {
+        displayDiv("preset-modal");
+    }
+}
+
 function getYear() {
     return new Date().getFullYear();
 }
@@ -17,4 +25,12 @@ function randomizeArray(arr) {
 
 function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function isHTMLLocal() {
+    if (window.location.protocol === "file:") {
+        return true;
+    }
+
+    return false;
 }

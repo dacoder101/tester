@@ -80,7 +80,7 @@
                         <button
                             class="main-button side-main-button"
                             id="preset-button"
-                            onclick="displayDiv('preset-modal')"
+                            onclick="presetDisplayDiv()"
                         >
                             View Presets
                         </button>
@@ -270,6 +270,26 @@
                         Amendment/Article Cards
                     </button>
                 </div>
+            </div>
+        </div>
+        <div class="modal" id="local-preset-modal" style="display: none">
+            <div class="modal-content">
+                <button
+                    class="close-button"
+                    onclick="displayDiv('local-preset-modal')"
+                >
+                    &times;
+                </button>
+                <h1>Presets Unsupported</h1>
+                <hr />
+                <p>
+                    Due to a technical limitation, you cannot load presets when
+                    locally viewing Tester. Please visit
+                    <a href="https://dacoder101.github.io/tester"
+                        >the online version of Tester</a
+                    >, or upload the preset test directly from
+                    <code>./assets/presets/</code>.
+                </p>
             </div>
         </div>
         <div class="modal" id="test-modal" style="display: none">
