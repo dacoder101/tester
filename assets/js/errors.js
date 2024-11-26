@@ -1,10 +1,3 @@
-class JSONParseError extends Error {
-    constructor() {
-        super("The file could not be parsed as JSON.");
-        this.name = this.constructor.name;
-    }
-}
-
 class JSONKeyError extends Error {
     constructor() {
         super(

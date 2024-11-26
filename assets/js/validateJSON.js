@@ -21,21 +21,19 @@ class JSONValidator {
 
     async validateJSON(event) {
         const fileContent = await this.readFile(event.target.files[0]);
-        const jsonData = this.parseJSON(fileContent);
 
-        if (!jsonData) {
+        try {
+            const jsonData = this.parseJSON(fileContent);
+
+            this.testKeysValidity(jsonData);
+
+            this.testQuestionKeyValidity(jsonData);
+
+            return jsonData;
+        } catch (error) {
+            console.error(error);
             return;
         }
-
-        if (!this.testKeysValidity(jsonData)) {
-            return;
-        }
-
-        if (!this.testQuestionKeyValidity(jsonData)) {
-            return;
-        }
-
-        return jsonData;
     }
 
     readFile(file) {
@@ -48,19 +46,14 @@ class JSONValidator {
     }
 
     parseJSON(json) {
-        try {
-            return JSON.parse(json);
-        } catch (error) {
-            console.error("Error parsing JSON:", error);
-            return null;
-        }
+        return JSON.parse(json);
     }
 
     testKeysValidity(json) {
         const keys = Object.keys(json);
         const validKeys = ["title", "label", "blankText", "questions"];
 
-        return keys.every((key) => validKeys.includes(key));
+        throw new JSONKeyError();
     }
 
     testQuestionKeyValidity(json) {
@@ -70,8 +63,6 @@ class JSONValidator {
             if (questions.length < 4) {
                 throw new LessThanFourQuestionsError();
             }
-
-            return true;
         }
 
         function stringAnswers() {
@@ -81,8 +72,6 @@ class JSONValidator {
                 if (typeof answer !== "string") {
                     throw new AnswerIsNotStringError();
                 }
-
-                return true;
             });
         }
 
@@ -97,23 +86,15 @@ class JSONValidator {
             if (uniqueAnswers.size < 4) {
                 throw new NotEnoughUniqueAnswersError();
             }
-
-            return true;
         }
 
-        try {
-            sufficientQuestions();
-            stringAnswers();
-            uniqueAnswers();
-            return true;
-        } catch (error) {
-            console.error(error);
-            return false;
-        }
+        sufficientQuestions();
+        stringAnswers();
+        uniqueAnswers();
     }
 
     resetJSON(element) {
-        element.textContent = "Invalid file. See console.";
+        element.textContent = "Bad file. See console.";
         this.testReady = false;
     }
 }
