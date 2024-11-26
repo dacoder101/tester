@@ -23,13 +23,15 @@ class JSONValidator {
         const fileContent = await this.readFile(event.target.files[0]);
         const jsonData = this.parseJSON(fileContent);
 
-        if (
-            [
-                jsonData,
-                this.testKeysValidity(jsonData),
-                this.testQuestionKeyValidity(jsonData),
-            ].some((value) => !value)
-        ) {
+        if (!jsonData) {
+            return;
+        }
+
+        if (!this.testKeysValidity(jsonData)) {
+            return;
+        }
+
+        if (!this.testQuestionKeyValidity(jsonData)) {
             return;
         }
 
@@ -66,7 +68,7 @@ class JSONValidator {
 
         function sufficientQuestions() {
             if (questions.length < 4) {
-                throw new LessThanFourQuestionsException();
+                throw new LessThanFourQuestionsError();
             }
 
             return true;
@@ -77,7 +79,7 @@ class JSONValidator {
 
             return answers.every((answer) => {
                 if (typeof answer !== "string") {
-                    throw new AnswerIsNotStringException();
+                    throw new AnswerIsNotStringError();
                 }
 
                 return true;
@@ -93,7 +95,7 @@ class JSONValidator {
             });
 
             if (uniqueAnswers.size < 4) {
-                throw new NotEnoughUniqueAnswersException();
+                throw new NotEnoughUniqueAnswersError();
             }
 
             return true;
