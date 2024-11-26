@@ -50,10 +50,30 @@ class JSONValidator {
     }
 
     testKeysValidity(json) {
-        const keys = Object.keys(json);
-        const validKeys = ["title", "label", "blankText", "questions"];
+        const validKeys = {
+            title: "string",
+            label: "string",
+            blankText: "string",
+            questions: "object",
+        };
 
-        throw new JSONKeyError();
+        const keys = Object.keys(json);
+
+        for (let key in validKeys) {
+            if (!keys.includes(key)) {
+                throw new JSONKeyError();
+            }
+        }
+
+        for (let key of keys) {
+            if (!validKeys.hasOwnProperty(key)) {
+                throw new JSONKeyError();
+            }
+
+            if (typeof json[key] !== validKeys[key]) {
+                throw new JSONValueTypeError();
+            }
+        }
     }
 
     testQuestionKeyValidity(json) {
